@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     FILE *file2 = fopen(argv[4], "w");
     FILE *file3 = fopen(argv[5], "w");
 
-    while (fscanf(in, "%79[^/n]\n", line) == 1) {
+    while (fscanf(in, "%79[^\n]\n", line) == 1) {
         if (strstr(line, argv[1]))
             fprintf(file1, "%s\n", line);
         else if (strstr(line, argv[3]))
