@@ -3,6 +3,16 @@ Exploring the C language.
 
 ## My Toolbox
 
+- The string.h header contains useful string functions.
+- strstr(a, b) will return the address of string b in string a.
+- strcpy() copies one string to another.
+- strcmp() compares two strings.
+- strcat() concatenates two strings.
+- strlen() finds the length of a string.
+- strchr() finds the location of a character inside a string.
+- An array of strings is an array of arrays.
+- You create an array of arrays using char strings [...][...] 
+
 - C functions like printf() and scanf() use the Standard Output and Standard Input to communicate.
 - The Standard Output goes to the display by default.
 - The Standard Input reads from the keyboard by default.
