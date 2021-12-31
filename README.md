@@ -14,6 +14,17 @@ Exploring the C language.
 - The mode can be “w” to write, “r” to read, or “a” to append.
 - The getopt() function makes it easier to read command- line options.
 
+### Data stream
+
+- The printf() function sends data to the Standard Output.
+- The Standard Output goes to the display by default.
+- You can redirect the Standard Output to a file by using > on the command line.
+- scanf() reads data from the Standard Input.
+- The Standard Input reads data from the keyboard by default.
+- You can redirect the Standard Input to read a file by using < on the command line.
+- The Standard Error is reserved for outputting error messages.
+- You can redirect the Standard Error using 2>.
+- You can connect the Standard Output of one process to the Standard Input of another process using a pipe.
 
 ### Main function and command arguments
 
