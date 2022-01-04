@@ -33,8 +33,6 @@ Exploring the C language.
 - The Standard Input reads data from the keyboard by default.
 - You can redirect the Standard Input to read a file by using < on the command line.
 - The Standard Error is reserved for outputting error messages.
-- You can redirect the Standard Error using 2>.
-- You can connect the Standard Output of one process to the Standard Input of another process using a pipe.
 
 ### Main function and command arguments
 
@@ -46,3 +44,15 @@ Exploring the C language.
 - A “:” (colon) following an option in the string means that the option takes an additional argument.
 - getopt() will record the options argument using the optarg variable.
 - After you have read all of the options, you should skip past them using the optind variable.
+
+### Function declaration
+
+- If the compiler finds a call to a function it hasn’t heard of, it will assume the function returns an int.
+- So if you try to call a function before you define it, there can be problems.
+- Function declarations tell the compiler what your functions will look like before you define them.
+- If function declarations appear at the top of your source code, the compiler won’t get confused about return types.
+- Function declarations are often put into header files.
+- You can tell the compiler to read the contents of a header file using #include.
+- The compiler will treat included code the same as code that is typed into the source file.
+- You can redirect the Standard Error using 2>.
+- You can connect the Standard Output of one process to the Standard Input of another process using a pipe.
