@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
 
 typedef struct island {
     char *name;
@@ -15,22 +17,43 @@ void display(island *start) {
     }
 }
 
+island* create(char *name) {
+    island *i = malloc(sizeof(island));
+    i->name = strdup(name);
+    i->opens = "09:00";
+    i->closes = "17:00";
+    i->next = NULL;
+    return i;
+}
+
+void release(island *start) {
+    island *i = start;
+    island *next = NULL;
+    
+    for(; i != NULL; i = next) {
+        next = i->next;
+        free(i->name);
+        free(i);
+    }
+}
+
 int main() {    
-    island amity = {"Amity", "09:00", "17:00", NULL};
-    island craggy = {"Craggy", "09:00", "17:00", NULL};
-    island isla_nubla = {"Isla Nublar", "09:00", "17:00", NULL}; 
-    island shutter = {"Shutter", "09:00", "17:00", NULL};
 
-    amity.next = &craggy;
-    craggy.next = &isla_nubla;
-    isla_nubla.next = &shutter;
+    island *start = NULL;
+    island *i = NULL;
+    island *next = NULL;
+    char name[80];
 
-    //Inserting values into the list
-    island skull = {"Skull", "09:00", "17:00", NULL}; 
-    isla_nubla.next = &skull;
-    skull.next = &shutter;
+    for(; fgets(name, 80, stdin) != NULL; i = next) {
+        next = create(name);
+        if (start == NULL)
+            start = next;
+        if (i != NULL)
+            i->next = next;
+    }
 
-    display(&amity);
+    display(start);
+    release(start);
 
     return 0;
 }
